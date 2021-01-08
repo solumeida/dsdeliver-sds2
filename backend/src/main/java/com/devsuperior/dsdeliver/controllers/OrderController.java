@@ -48,6 +48,7 @@ public ResponseEntity<OrderDTO> insert(@RequestBody OrderDTO dto) {
 public ResponseEntity<OrderDTO> setDelivered(@PathVariable Long id) {
 	OrderDTO dto = service.setDelivered(id);
 	return ResponseEntity.ok().body(dto);
+	//psql -c "ALTER USER postgres WITH PASSWORD 'unix'" -d template1
 	
 }
 
