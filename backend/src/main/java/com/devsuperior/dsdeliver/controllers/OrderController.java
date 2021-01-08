@@ -7,7 +7,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,6 +44,11 @@ public ResponseEntity<OrderDTO> insert(@RequestBody OrderDTO dto) {
 	return ResponseEntity.created(uri).body(dto);// dá certo mas....
 }
 
-
+@PutMapping("/{id}/delivered")
+public ResponseEntity<OrderDTO> setDelivered(@PathVariable Long id) {
+	OrderDTO dto = service.setDelivered(id);
+	return ResponseEntity.ok().body(dto);
+	
+}
 
 }
