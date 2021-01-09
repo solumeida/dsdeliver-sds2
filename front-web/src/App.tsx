@@ -1,12 +1,13 @@
-import './App.css';
+import './App.css'
+import Navbar from './Navbar'
 
 
 function App() {
   return (
     <div>
-      <h1>Hellou Mundo louco!</h1>
+     <Navbar/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
