@@ -3,15 +3,16 @@ import StepsHeader from './StepsHeader';
 import './styles.css';
 import './StepsHeader'
 import ProductList from './ProductList';
-import { Product } from './types';
+import { OrderLocationData, Product } from './types';
 import { fetchProducts } from '../api';
+import OrderLocation from './OrderLocation';
 
 
 function Order(){
 
   const [products,setProducts] =useState<Product[]>([]);
-  console.log(products);
-  useEffect(()=>{
+  const [orderLocation,setOrderLocation]=useState<OrderLocationData>();
+   useEffect(()=>{
       fetchProducts()
       .then(res=> setProducts(res.data))
       .catch(error=>console.log(error));
@@ -20,6 +21,7 @@ function Order(){
     <nav className="orders-container"> 
    <StepsHeader/>
    <ProductList products={products}/>
+   <OrderLocation onChangeLocation={location=>setOrderLocation(location)}/>
     </nav>
   )
 }
