@@ -24,6 +24,5 @@ yarn-error.log*
 
 .eslintcache
 
-Counter.tsx
-Hello.tsx
-meu-roteiro.txt
+
+/src/aula
