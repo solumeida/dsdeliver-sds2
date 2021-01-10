@@ -1,31 +1,36 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, Text, View,Image } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
+import Header from '../Header';
 
 export default function Home() {
+  const navigation = useNavigation()
 
-const handleOnPress=()=>{
-  console.log("React Button!")
-}
+  const handleOnPress = () => {
+    navigation.navigate('Orders')
+    console.log("React Button!")
+  }
 
   return (
-   <>
-    <View style={styles.container}>
-      { <Image source={require('../assets/deliveryman.png')} /> }
-      <Text style={styles.title}>Acompanhe os pedidos e {'\n'}entreque no prazo!</Text>
-      <Text style={styles.subTitle} >Receba todos os pedidos do seu {'\n'} restarurante na palma da sua mão!</Text>
-      
-    </View>
+    <>
+     <Header />
+      <View style={styles.container}>
+        {<Image source={require('../assets/deliveryman.png')} />}
+        <Text style={styles.title}>Acompanhe os pedidos e {'\n'}entreque no prazo!</Text>
+        <Text style={styles.subTitle} >Receba todos os pedidos do seu {'\n'} restarurante na palma da sua mão!</Text>
 
-    <View style={styles.footer}>
-      <RectButton style={styles.button} onPress={handleOnPress}>
-        <Text style={styles.buttonText}>Ver Pedidos</Text>
-      </RectButton>
+      </View>
 
-    </View>
+      <View style={styles.footer}>
+        <RectButton style={styles.button} onPress={handleOnPress}>
+          <Text style={styles.buttonText}>Ver Pedidos</Text>
+        </RectButton>
+
+      </View>
 
 
-   </>
+    </>
   );
 }
 const styles = StyleSheet.create(
