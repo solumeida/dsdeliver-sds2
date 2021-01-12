@@ -2,13 +2,17 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { TouchableNativeFeedback } from 'react-native-gesture-handler';
+import { currencyFormat } from '../util';
+
+
+
 
 export default function Header() {
 
   const navigation = useNavigation()
   const handleOnPress = () => {
     navigation.navigate('Home')
-    
+   // console.log(currencyFormat(2665000,'pt-br')); // $2,665.00
   }
    
   return (

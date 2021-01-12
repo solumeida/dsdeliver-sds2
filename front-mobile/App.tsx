@@ -5,8 +5,9 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Routes from './src/Routes';
 
-
 export default function App() {
+
+ 
   let [fontsLoaded] = useFonts({
     OpenSans_400Regular, 
     OpenSans_700Bold
@@ -17,6 +18,7 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
+     
       <StatusBar style="auto" />
     
      <Routes/>
@@ -30,3 +32,5 @@ const styles = StyleSheet.create({
     
   },
 });
+
+// clear && expo start --localhost --android  para vinculo usb!

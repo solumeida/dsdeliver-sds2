@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import {createStackNavigator as navigar} from '@react-navigation/stack'
 import Home from "./Home";
 import Orders from "./Orders";
+import OrderDetails from './OrderDetails';
 
 const Stack = navigar();
 
@@ -17,6 +18,7 @@ export default function Routes(): JSX.Element{
 
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Orders" component={Orders} />
+        <Stack.Screen name="OrderDetails" component={OrderDetails} />
 
 
 
